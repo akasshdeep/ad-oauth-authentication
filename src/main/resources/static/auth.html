@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background: #f4f4f4;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .github-button {
+            background-color: #24292e;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="mobile" placeholder="Mobile" required>
+        <input type="text" name="userName" placeholder="Username" required>
+        <input type="password" name="pwd" placeholder="Password" required>
+        <input type="password" name="confirmPwd" placeholder="Confirm Password" required>
+        <button type="submit">Create Account</button>
+    </form>
+    <button onclick="window.location.href='auth.html'">Back to Sign In</button>
+
+    <!-- GitHub Signup Button -->
+    <button type="button" class="github-button" onclick="loginWithGitHub()">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        Sign Up with GitHub
+    </button>
+</div>
+
+<script>
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const params = new URLSearchParams(formData).toString();
+
+        fetch(`/dbconnect/signup?${params}`, { method: 'POST' })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(err => alert("Error: " + err));
+    });
+
+    function loginWithGitHub() {
+        fetch('/gitsungup')
+            .then(response => response.text())
+            .then(redirectUrl => {
+                window.location.href = redirectUrl;
+            })
+            .catch(err => alert("GitHub signup failed: " + err));
+    }
+</script>
+</body>
+</html>
