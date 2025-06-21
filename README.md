@@ -166,8 +166,11 @@ Open your browser and go to:
 http://localhost:8080/index.html
 ~~~
 ![Alt text](/Screenshot/SignIn.png?raw=true "Optional Title")
+
 ![Alt text](/Screenshot/Signup.png?raw=true "Optional Title")
+
 ![Alt text](/Screenshot/OathLogin.png?raw=true "Optional Title")
+
 ![Alt text](/Screenshot/Verification.png?raw=true "Optional Title")
 # 📜 License
 This project is for educational/demo purposes and is open-source under the MIT License.
