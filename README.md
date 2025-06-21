@@ -1,28 +1,28 @@
-# 🛡️ Java Auth Demo: Local SQL + GitHub OAuth2
+#  Java Auth Demo: Local SQL + GitHub OAuth2
 This project showcases a complete Java-based user authentication system using:
 
-- ✅ Local Authentication with MySQL
+-  Local Authentication with MySQL
 
-- 🔐 OAuth 2.0 Authentication via GitHub
+-  OAuth 2.0 Authentication via GitHub
 
-- 🚀 Spring Boot for REST APIs and MVC
+-  Spring Boot for REST APIs and MVC
 
-- 💾 JDBC for SQL DB connectivity
+-  JDBC for SQL DB connectivity
 
-# 📌 Project Objective
+#  Project Objective
 To demonstrate how Java can handle user sign-up and sign-in using a SQL database and integrate GitHub OAuth 2.0 login for secure third-party authentication.
 
-## 🔧 Tech Stack & Components
+##  Tech Stack & Components
 ### Component	Description
-- 🧩 Spring Boot-	Framework for building the REST APIs and web controllers
-- 💻 MySQL- DB	Used for storing local user credentials
-- 🔌 JDBC-	Java Database Connectivity for SQL communication
-- 🧾 Spring MVC-	Model-View-Controller pattern to render pages (like Welcome screen)
-- 🔐 GitHub OAuth2-	Handles login using GitHub via the /callback OAuth2 flow
-- 🧪 Postman/cURL-	Can be used for API testing for /signup and /signin routes
+-  Spring Boot-	Framework for building the REST APIs and web controllers
+-  MySQL- DB	Used for storing local user credentials
+-  JDBC-	Java Database Connectivity for SQL communication
+-  Spring MVC-	Model-View-Controller pattern to render pages (like Welcome screen)
+-  GitHub OAuth2-	Handles login using GitHub via the /callback OAuth2 flow
+-  Postman/cURL-	Can be used for API testing for /signup and /signin routes
 
-# 🔄 Authentication Flow
-## 1. 🔒 Local Authentication
+#  Authentication Flow
+## 1.  Local Authentication
 Signup API:
 ~~~
 POST /signup
@@ -35,7 +35,7 @@ GET /Signin?urname=xxx&pwd=yyy
 Validates credentials with the MySQL database.
 ~~~
 
-## 2. 🔐 GitHub OAuth 2.0
+## 2.  GitHub OAuth 2.0
 ## Redirects to GitHub login.
 
 On success, GitHub sends back a code and state to:
@@ -49,7 +49,7 @@ Fetches GitHub username and sets it in the HTTP session.
 ~~~
 GET /Welcome
 ~~~
-# 📁 Project Structure
+#  Project Structure
 ~~~
 ad-oauth-authentication/
 ├── .mvn/
@@ -71,15 +71,15 @@ ad-oauth-authentication/
 │           └── application.properties                     # Spring Boot config (DB, OAuth keys)
 
 ~~~
-# 🚀 How to Use This Project
+#  How to Use This Project
 This section will guide you through setting up the project with MySQL for local authentication and GitHub OAuth for third-party login.
 
-## 1. 📥 Clone the Repository
+## 1.  Clone the Repository
 ~~~
 git clone https://github.com/akasshdeep/ad-oauth-authentication.git
 cd ad-oauth-authentication
 ~~~
-## 2. 🛠️ Install MySQL and Set Up Database
+## 2.  Install MySQL and Set Up Database
 - Make sure MySQL is installed and running.
 
 - Log in to MySQL and run the following to create the database and table:
@@ -100,7 +100,7 @@ CREATE TABLE users (
 ~~~
 ![Alt text](/Screenshot/SQL.png?raw=true "Optional Title")
 
-## 3. 🔐 Register a GitHub OAuth App
+## 3.  Register a GitHub OAuth App
 - Go to GitHub Developer Settings.
 
 - Click "New OAuth App".
@@ -119,7 +119,7 @@ Client ID
 
 Client Secret
 ~~~
-## 4. ✍️ Update Java Configuration
+## 4.  Update Java Configuration
 Open:
 
 ~~~
@@ -136,7 +136,7 @@ String dbPassword = "<your-mysql-password>";
 ~~~
 
 ![Alt text](/Screenshot/ProjectView.png?raw=true "Optional Title")
-## 5. 🖥️ Update Frontend OAuth Redirect (index.html)
+## 5.  Update Frontend OAuth Redirect (index.html)
 Open:
 
 ~~~
@@ -148,7 +148,7 @@ Replace the GitHub OAuth URL with your actual client_id, like:
 <a href="https://github.com/login/oauth/authorize?client_id=<your-client-id>&scope=user">Login with GitHub</a>
 ~~~
 
-## 6. ▶️ Run the Project
+## 6.  Run the Project
 You can run the Spring Boot app from IntelliJ or with:
 
 ~~~
@@ -159,7 +159,7 @@ Or, if using Maven installed locally:
 ~~~
 mvn spring-boot:run
 ~~~
-## 7. 🌐 Access the App
+## 7.  Access the App
 Open your browser and go to:
 
 ~~~
@@ -172,5 +172,5 @@ http://localhost:8080/index.html
 ![Alt text](/Screenshot/OathLogin.png?raw=true "Optional Title")
 
 ![Alt text](/Screenshot/Verification.png?raw=true "Optional Title")
-# 📜 License
+#  License
 This project is for educational/demo purposes and is open-source under the MIT License.
