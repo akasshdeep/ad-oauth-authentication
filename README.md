@@ -92,7 +92,7 @@ USE ad;
 CREATE TABLE users (
     First_Name VARCHAR(50),
     Last_Name VARCHAR(50),
-    User_Name VARCHAR(50) PRIMARY KEY,
+    User_Name VARCHAR(50) ,
     Password VARCHAR(100),
     Email VARCHAR(100),
     Mob VARCHAR(15)
